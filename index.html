@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>Pomodoro</title>
+</head>
+<body class="normal-theme">
+    <div id="tittle" class="single-wrapper">
+        <div class="box">
+            <span class="bigFont">Reloj</span>
+            <span class="bigFont">Pomodoro</span>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box">
+            <span class="bigFont hour">00</span>
+            <span class="txt">Hours</span>
+        </div>
+        <div class="box">
+            <span class="bigFont min">00</span>
+            <span class="txt">Minutes</span>
+        </div>
+        <div class="box">
+            <span class="bigFont sec">00</span>
+            <span class="txt">Seconds</span>
+        </div>
+        <div id="pause-container" class="box">
+            <button type="button" id="pause-btton">
+                <svg id="pause-ic" class="hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M360-840v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280ZM360-280h80v-320h-80v320Zm160 0h80v-320h-80v320Z"/></svg>
+                <svg id="continue-ic" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M360-840v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Zm-80 160 240-160-240-160v320Z"/></svg>
+            </button>
+            <span class="txt" id="pause-txt">Start</span>
+        </div>
+    </div>
+    <div id="timer" class="single-wrapper">
+        <div class="box">
+            <form>
+                <div class="selector-container">
+                    <button type="button" id="decrement-con">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z"/></svg>
+                    </button>
+                    <span id="conc-time" class="bigFont">10</span>
+                    <button type="button" id="increment-con">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m296-345-56-56 240-240 240 240-56 56-184-183-184 183Z"/></svg>
+                    </button>
+                </div>
+            </form>
+            <span class="txt">Concentration</s>
+        </div>
+        <div class="box">
+            <form>
+                <div class="selector-container">
+                    <button type="button" id="decrement-rest">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z"/></svg>
+                    </button>
+                    <span id="rest-time" class="bigFont">05</span>
+                    <button type="button" id="increment-rest">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m296-345-56-56 240-240 240 240-56 56-184-183-184 183Z"/></svg>
+                    </button>
+                </div>
+            </form>
+            <span class="txt">Rest</s>
+        </div>
+        <div class="box">
+            <form>
+                <div class="selector-container">
+                    <button type="button" id="decrement-ses">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z"/></svg>
+                    </button>
+                    <span id="sessions-number" class="bigFont">03</span>
+                    <button type="button" id="increment-ses">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m296-345-56-56 240-240 240 240-56 56-184-183-184 183Z"/></svg>
+                    </button>
+                </div>
+            </form>
+            <span class="txt">Sessions</s>
+        </div>
+    </div>
+    <button id="reset-btton" class="hidden">
+        <span>Reset</span>
+    </button>
+
+    <audio id="pause-sound" src="./assets/media/restBell.mp3" preload="auto"></audio>
+    <audio id="end-sound" src="./assets/media/endBell.mp3" preload="auto"></audio>
+    <script src="./js/clock.js"></script>
+</body>
+</html>
