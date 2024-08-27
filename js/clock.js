@@ -219,4 +219,6 @@ incrementSesBtton.addEventListener('click', upSesion);
 decrementConBtton.addEventListener('click', downWork);
 decrementRestBtton.addEventListener('click', downRest);
 decrementSesBtton.addEventListener('click', downSesion);
-resetBtton.addEventListener('click', resetTimer);
+resetBtton.addEventListener('click', function() {
+    location.reload();
+});
